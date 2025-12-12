@@ -1,73 +1,55 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Tailwindcss
+Project Name- quiz-app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Interactive Quiz App
 
-Currently, two official plugins are available:
+This project is a visually polished, animated quiz application built using React + TypeScript + Tailwind CSS. It features a multi-step question flow with smooth navigation, animated cat-paw graphics, progress indicators, and a beautifully styled results screen. The quiz evaluates user answers, calculates the final score, animates the score from 0 to the final percentage, and displays a progress bar that fills in real time. The UI closely replicates a professional Figma design with custom gradients, shadows, and glass card effects. The project is fully responsive and optimized for deployment on Vercel.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+>>Features
 
-## React Compiler
+1)Four-question interactive quiz
+2)Progress indicator that updates dynamically
+3)Animated cat paw element on every question screen
+4)Custom-designed cards, gradients, shadows, and frame layers
+5)Answer validation with final percentage calculation
+6)Animated score counter + horizontal score bar
+7)"Start Again" flow to retake the quiz
+8)Fully deployed on Vercel
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+>>Tech Stack
 
-## Expanding the ESLint configuration
+1)React + TypeScript
+2)Tailwind CSS (UI styling & animations)
+3)Vercel for hosting
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+>>GitHub for version control
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+How to Run Locally
+npm install
+npm run dev
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+>>Deployment
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project is deployed on Vercel and automatically updates whenever new commits are pushed to GitHub.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+📁 Folder Structure
+root/
+│── public/
+│   ├── paw.png              # Animated cat paw image
+│   └── favicon.ico
+│
+│── src/
+│   ├── App.tsx              # Main quiz logic + UI
+│   ├── questions.ts         # Question data with correct answers
+│   ├── index.css            # Tailwind + custom styles
+│   ├── main.tsx             # React app entry point
+│   └── animations.css       # (optional) extra animation styles
+│
+│── .gitignore
+│── package.json
+│── tailwind.config.js
+│── tsconfig.json
+│── vite.config.ts (if using Vite)
+│── README.md
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
