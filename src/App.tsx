@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
 import { quizData } from "./questions";
 
 export default function App() {
